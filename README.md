@@ -104,28 +104,6 @@ DFGviz (DataFlow Graph Visualizer) is a powerful, user-friendly tool for analyzi
 
 **No installation required!** The binary includes all dependencies.
 
-### Option 2: Build from Source
-
-#### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-
-#### Steps
-
-```bash
-# Clone the repository
-git clone https://github.com/SuzaneANO/DFGviz.git
-cd DFGviz
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Build binary
-python build_binary.py
-
-# The executable will be in the 'dist' directory
-```
-
 ---
 
 ## 📖 Usage
@@ -238,13 +216,14 @@ The generated HTML graphs provide:
 
 ## 📋 Requirements
 
+### System Requirements
+- **Windows**: Windows 10 or later
+- **Linux**: Most modern distributions  
+- **macOS**: macOS 10.14 or later
+- **Git**: Required for git history analysis (included in most systems)
+
 ### For Binary (No Requirements)
 The pre-built binary includes everything - just download and run!
-
-### For Source Build
-- Python 3.8 or higher
-- pip
-- Git (for git history analysis)
 
 ### Python Dependencies
 ```
