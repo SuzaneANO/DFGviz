@@ -233,10 +233,6 @@ pyinstaller>=5.0.0
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
 ---
 
 ## 📝 License
@@ -257,7 +253,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/SuzaneANO/DFGviz/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/SuzaneANO/DFGviz/discussions)
-- **Email**: your-email@example.com
+- **Email**: adamsbane02@gmail.com
 
 ---
 
