@@ -111,8 +111,8 @@ DFGviz (DataFlow Graph Visualizer) is a powerful, user-friendly tool for analyzi
 ### Quick Start
 
 1. **Launch the application**
-   - Double-click `ScalpelDataflowAnalyzer.exe` (Windows)
-   - Or run `./ScalpelDataflowAnalyzer` (Linux/macOS)
+   - Double-click `DFGviz.exe` (Windows)
+   - Or run `./DFGviz` (Linux/macOS)
 
 2. **Select a Git Repository**
    - Click "Browse" next to the Repository field
