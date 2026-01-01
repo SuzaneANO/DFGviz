@@ -237,15 +237,6 @@ pyinstaller>=5.0.0
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### Development Setup
-
-```bash
-git clone https://github.com/SuzaneANO/DFGviz.git
-cd DFGviz
-pip install -r requirements.txt
-python git_history_dataflow_analyzer.py --tkinter
-```
-
 ---
 
 ## 📝 License
