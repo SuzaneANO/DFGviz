@@ -1,0 +1,56 @@
+# Ignore everything by default
+*
+
+# But include these files/directories
+!.gitignore
+!README.md
+!LICENSE
+!QUICK_START.md
+!CONTRIBUTING.md
+!PUBLISHING_GUIDE.md
+!RELEASE_NOTES.md
+!requirements.txt
+!REPOSITORY_INFO.md
+
+# Include executable and releases
+!dist/
+!dist/DFGviz.exe
+!releases/
+!releases/*.zip
+!releases/*.tar.gz
+
+# Include documentation assets
+!docs/
+!docs/logo.png
+!docs/demo_video.mp4
+!docs/demo_video_thumbnail.png
+!docs/screenshots/
+!docs/screenshots/*.png
+
+# Include GitHub workflows
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+
+# Exclude source code
+*.py
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.spec
+build/
+*.json
+*.html
+*.dot
+*.md
+!README.md
+!QUICK_START.md
+!CONTRIBUTING.md
+!PUBLISHING_GUIDE.md
+!RELEASE_NOTES.md
+graph_backups/
+test_*.py
+*_test.py
+*.bat
+*.sh
