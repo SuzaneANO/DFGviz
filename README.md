@@ -191,7 +191,6 @@ The generated HTML graphs provide:
 - [User Guide](docs/USER_GUIDE.md) - Detailed usage instructions
 - [API Reference](docs/API.md) - Programmatic API documentation
 - [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
-- [Contributing](CONTRIBUTING.md) - How to contribute to the project
 
 ---
 
