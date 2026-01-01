@@ -247,6 +247,28 @@ The generated HTML graphs provide:
 - **Visualization**: D3.js-based interactive graphs
 - **Git Integration**: Read-only git operations
 
+### Scalpel Usage & Coverage
+
+DFGviz uses Scalpel efficiently, focusing on its core CFG building capabilities. Coverage analysis shows that DFGviz uses approximately **4% of Scalpel's codebase**, which is optimal for our use case.
+
+| Module Category | Coverage | Status | Usage |
+|----------------|----------|--------|-------|
+| **CFG Building** | 19% | ✅ Used | Core functionality for building control flow graphs |
+| **MNode Core** | 15% | ✅ Used | Function definitions, variables, function calls parsing |
+| **Visitors** | 19% | ✅ Used | Function call and variable tracking |
+| **SSA** | 0% | ❌ Unused | Static Single Assignment analysis (not needed) |
+| **Call Graph (pycg)** | 0% | ❌ Unused | Program-wide call graph (custom implementation) |
+| **Type Inference** | 0% | ❌ Unused | Type analysis (not needed) |
+| **Overall** | **~4%** | ✅ **Optimal** | Efficient usage of Scalpel's CFG foundation |
+
+**Key Findings:**
+- ✅ DFGviz uses Scalpel's CFG building and basic parsing features
+- ✅ Only necessary modules are loaded, ensuring optimal performance
+- ✅ Custom dataflow analysis built on top of Scalpel's CFG foundation
+- ✅ Unused features (SSA, type inference, call graph) are not needed for our use case
+
+📊 **Detailed Coverage Report**: See [SCALPEL_COVERAGE_REPORT.md](SCALPEL_COVERAGE_REPORT.md) for complete analysis.
+
 ---
 
 ## 📋 Requirements
