@@ -12,6 +12,7 @@
 !requirements.txt
 !WORKFLOW.md
 !LOGO_GENERATION_PROMPT.md
+!SCALPEL_COVERAGE_REPORT.md
 
 # Include executable and releases
 !dist/
@@ -50,8 +51,10 @@ build/
 !CONTRIBUTING.md
 !PUBLISHING_GUIDE.md
 !RELEASE_NOTES.md
+!SCALPEL_COVERAGE_REPORT.md
 graph_backups/
 test_*.py
+!test_scalpel_coverage.py
 *_test.py
 *.bat
 *.sh
