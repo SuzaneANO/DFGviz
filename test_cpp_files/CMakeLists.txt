@@ -14,10 +14,11 @@ add_definitions(-DVERSION_MAJOR=1)
 add_definitions(-DVERSION_MINOR=0)
 
 # Source files
+# Note: src/processor.cpp is intentionally excluded for testing auto-detect
 set(SOURCES
     src/main.cpp
     src/calculator.cpp
-    src/processor.cpp
+    # src/processor.cpp  # Excluded file - should NOT be auto-detected
 )
 
 # Header files
