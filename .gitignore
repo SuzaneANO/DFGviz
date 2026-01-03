@@ -65,6 +65,7 @@ build/
 !RELEASE_SUMMARY.md
 !CMake_ANALYSIS_README.md
 !CMAKE_INTEGRATION_GUIDE.md
+!CMAKE_EXCLUSION_TEST.md
 !test_cmake_summary.md
 graph_backups/
 test_*.py
@@ -73,6 +74,7 @@ test_*.py
 !test_cpp_dataflow_comprehensive.py
 !test_cpp_runner.py
 !test_cmake_analysis.py
+!test_cmake_exclusion.py
 !cmake_parser.py
 *_test.py
 *.bat
