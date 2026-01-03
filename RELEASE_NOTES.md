@@ -1,5 +1,47 @@
 # Release Notes
 
+## Version 1.1.0 - C++ Test Suite Release
+
+### 🧪 New Features
+
+- **Comprehensive C++ Test Suite** - Added extensive test coverage for C++ dataflow analysis
+  - Basic dataflow tests (variables, assignments, arithmetic)
+  - Function call and interprocedural analysis tests
+  - Class and OOP feature tests
+  - Control flow tests (if/else, loops)
+  - Edge case and error handling tests
+  - Complex scenario tests
+
+- **GitHub Actions CI/CD** - Automated testing on push and pull requests
+  - Python tests run on multiple OS and Python versions
+  - C++ tests run on Windows, Linux, and macOS
+  - Tests run automatically before releases
+
+### 📝 Test Files Added
+
+- `test_cpp_dataflow_comprehensive.py` - Main comprehensive test suite
+- `test_cpp_runner.py` - Flexible test runner with multiple options
+- `test_cpp_files/` - Test C++ files for various scenarios
+- `TEST_README.md` - Comprehensive testing documentation
+- `.github/workflows/tests.yml` - CI/CD test workflow
+
+### 🔧 Improvements
+
+- Better error handling in test suite
+- Automatic test file cleanup
+- Cross-platform test support
+- Comprehensive documentation
+
+### 📦 Testing
+
+Run tests locally:
+```bash
+cd dataflow_analysis
+python test_cpp_runner.py --all
+```
+
+---
+
 ## Version 1.0.0 - Initial Release
 
 ### 🎉 First Public Release!
