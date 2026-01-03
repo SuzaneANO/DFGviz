@@ -59,15 +59,17 @@ build/
 !doc/
 !doc/*.md
 graph_backups/
+# Ignore all test files
 test_*.py
-!test_scalpel_coverage.py
-!test_clang_analysis.py
-!test_cpp_dataflow_comprehensive.py
-!test_cpp_runner.py
-!test_cmake_analysis.py
-!test_cmake_exclusion.py
-!cmake_parser.py
 *_test.py
+test_cpp_files/test_*.cpp
+# But keep test_cpp_files structure for CMake (source files, headers, CMakeLists.txt)
+!test_cpp_files/CMakeLists.txt
+!test_cpp_files/include/
+!test_cpp_files/src/
+!test_cpp_files/src/*.cpp
+!test_cpp_files/include/*.h
+!cmake_parser.py
 *.bat
 *.sh
 !prepare_release.sh
