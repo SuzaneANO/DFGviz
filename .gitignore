@@ -60,12 +60,17 @@ build/
 !RELEASE_CHECKLIST.md
 !RELEASE_INSTRUCTIONS.md
 !RELEASE_SUMMARY.md
+!CMake_ANALYSIS_README.md
+!CMAKE_INTEGRATION_GUIDE.md
+!test_cmake_summary.md
 graph_backups/
 test_*.py
 !test_scalpel_coverage.py
 !test_clang_analysis.py
 !test_cpp_dataflow_comprehensive.py
 !test_cpp_runner.py
+!test_cmake_analysis.py
+!cmake_parser.py
 *_test.py
 *.bat
 *.sh
