@@ -58,6 +58,8 @@ build/
 !TEST_README.md
 !TEST_SUMMARY.md
 !RELEASE_CHECKLIST.md
+!RELEASE_INSTRUCTIONS.md
+!RELEASE_SUMMARY.md
 graph_backups/
 test_*.py
 !test_scalpel_coverage.py
