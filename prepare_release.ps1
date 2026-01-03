@@ -36,9 +36,9 @@ git add test_cpp_runner.py
 git add test_cpp_files/
 git add .github/workflows/tests.yml
 git add .github/workflows/release.yml
-git add TEST_README.md
-git add TEST_SUMMARY.md
-git add RELEASE_NOTES.md
+git add doc/TEST_README.md
+git add doc/TEST_SUMMARY.md
+git add doc/RELEASE_NOTES.md
 git add pytest.ini
 
 # Commit changes

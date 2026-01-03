@@ -1,3 +1,4 @@
 python-scalpel>=0.1.0
 pyinstaller>=5.0.0
+clang>=16.0.0
 

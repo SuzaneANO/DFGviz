@@ -146,7 +146,7 @@ graph TD
 - 📈 **Git History Tracking** - See how dataflow evolved across commits
 - 🎯 **Interprocedural Analysis** - Complete picture across function boundaries
 
-For detailed analysis workflow, see [WORKFLOW.md](WORKFLOW.md)
+For detailed analysis workflow, see [Workflow Guide](doc/WORKFLOW.md)
 
 ### Quick Start
 
@@ -319,10 +319,12 @@ python test_cmake_analysis.py
 
 ### 📚 C++ Documentation
 
-- [C++ Analysis Guide](CPP_ANALYSIS_README.md) - Detailed C++ analysis documentation
-- [CMake Integration Guide](CMAKE_INTEGRATION_GUIDE.md) - CMake parsing and usage
-- [CMake Analysis README](CMake_ANALYSIS_README.md) - CMake parser documentation
-- [Test Documentation](TEST_README.md) - Testing guide for C++ analysis
+- [C++ Analysis Guide](doc/CPP_ANALYSIS_README.md) - Detailed C++ analysis documentation
+- [CMake Integration Guide](doc/CMAKE_INTEGRATION_GUIDE.md) - CMake parsing and usage
+- [CMake Analysis README](doc/CMake_ANALYSIS_README.md) - CMake parser documentation
+- [CMake Exclusion Test](doc/CMAKE_EXCLUSION_TEST.md) - Testing CMake file exclusion
+- [Test Documentation](doc/TEST_README.md) - Testing guide for C++ analysis
+- [Test Summary](doc/TEST_SUMMARY.md) - Quick test reference
 
 ### 🎯 Path-Sensitive Analysis Example
 
@@ -381,9 +383,37 @@ The generated HTML graphs provide:
 
 ## 📚 Documentation
 
-- [User Guide](docs/USER_GUIDE.md) - Detailed usage instructions
-- [API Reference](docs/API.md) - Programmatic API documentation
-- [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
+### Getting Started
+- [Quick Start Guide](doc/QUICK_START.md) - Get up and running quickly
+- [Workflow Guide](doc/WORKFLOW.md) - Detailed analysis workflow
+
+### C++ & CMake
+- [C++ Analysis Guide](doc/CPP_ANALYSIS_README.md) - Detailed C++ analysis documentation
+- [CMake Integration Guide](doc/CMAKE_INTEGRATION_GUIDE.md) - CMake parsing and usage
+- [CMake Analysis README](doc/CMake_ANALYSIS_README.md) - CMake parser documentation
+- [CMake Exclusion Test](doc/CMAKE_EXCLUSION_TEST.md) - Testing CMake file exclusion
+- [Windows Clang Installation](doc/WINDOWS_CLANG_INSTALL.md) - Installing Clang on Windows
+
+### Testing
+- [Test Documentation](doc/TEST_README.md) - Comprehensive testing guide
+- [Test Summary](doc/TEST_SUMMARY.md) - Quick test reference
+
+### Analysis & Implementation
+- [Scalpel Analysis README](doc/SCALPEL_ANALYSIS_README.md) - Scalpel integration details
+- [Scalpel Coverage Report](doc/SCALPEL_COVERAGE_REPORT.md) - Scalpel usage coverage
+- [Diff Highlighting README](doc/DIFF_HIGHLIGHTING_README.md) - Diff visualization guide
+- [Branch C++ README](doc/BRANCH_C++_README.md) - C++ branch development notes
+
+### Release & Development
+- [Release Notes](doc/RELEASE_NOTES.md) - Version history and changelog
+- [Release Checklist](doc/RELEASE_CHECKLIST.md) - Pre-release checklist
+- [Release Instructions](doc/RELEASE_INSTRUCTIONS.md) - Step-by-step release guide
+- [Release Summary](doc/RELEASE_SUMMARY.md) - Release process overview
+
+### Other Documentation
+- [User Guide](docs/USER_GUIDE.md) - Detailed usage instructions (if exists)
+- [API Reference](docs/API.md) - Programmatic API documentation (if exists)
+- [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions (if exists)
 
 ---
 
@@ -424,7 +454,7 @@ DFGviz uses Scalpel efficiently, focusing on its core CFG building capabilities.
 - ✅ Custom dataflow analysis built on top of Scalpel's CFG foundation
 - ✅ Unused features (SSA, type inference, call graph) are not needed for our use case
 
-📊 **Detailed Coverage Report**: See [SCALPEL_COVERAGE_REPORT.md](SCALPEL_COVERAGE_REPORT.md) for complete analysis.
+📊 **Detailed Coverage Report**: See [Scalpel Coverage Report](doc/SCALPEL_COVERAGE_REPORT.md) for complete analysis.
 
 ---
 

@@ -53,20 +53,11 @@ build/
 !pytest.ini
 *.md
 !README.md
-!QUICK_START.md
 !CONTRIBUTING.md
 !PUBLISHING_GUIDE.md
-!RELEASE_NOTES.md
-!SCALPEL_COVERAGE_REPORT.md
-!TEST_README.md
-!TEST_SUMMARY.md
-!RELEASE_CHECKLIST.md
-!RELEASE_INSTRUCTIONS.md
-!RELEASE_SUMMARY.md
-!CMake_ANALYSIS_README.md
-!CMAKE_INTEGRATION_GUIDE.md
-!CMAKE_EXCLUSION_TEST.md
-!test_cmake_summary.md
+# Documentation files are now in doc/ directory
+!doc/
+!doc/*.md
 graph_backups/
 test_*.py
 !test_scalpel_coverage.py
