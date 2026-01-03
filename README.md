@@ -24,6 +24,8 @@
 
 DFGviz (DataFlow Graph Visualizer) is a powerful, user-friendly tool for analyzing Python code dataflow across git history. It provides interactive visualizations, function-level analysis, and comprehensive dataflow tracking using Scalpel CFG (Control Flow Graph) analysis.
 
+> **🆕 C++ Support Available!** Full C++ analysis with CMake integration using Clang/LLVM. See [C++ & CMake Support](#-c--cmake-support) section below.
+
 ### Key Highlights
 
 - ✅ **Interactive GUI** - No command-line knowledge required
@@ -32,6 +34,8 @@ DFGviz (DataFlow Graph Visualizer) is a powerful, user-friendly tool for analyzi
 - ✅ **Interactive Visualizations** - Beautiful D3.js-based dataflow graphs
 - ✅ **Standalone Binary** - No installation needed, works out of the box
 - ✅ **Multi-File Support** - Analyze multiple Python files simultaneously
+- ✅ **C++ Support** - Full C++ analysis with Clang/LLVM and CMake integration
+- ✅ **CMake Integration** - Automatic CMakeLists.txt parsing for accurate compilation context
 
 ---
 
@@ -193,6 +197,159 @@ To analyze dataflow across git commits:
 
 ---
 
+## 🔧 C++ & CMake Support
+
+DFGviz now includes comprehensive C++ analysis capabilities with CMake integration for accurate, path-sensitive analysis.
+
+### 🎯 C++ Analysis Features
+
+- **Clang/LLVM Integration** - Uses Clang's AST for precise C++ parsing
+- **CMakeLists.txt Parsing** - Automatically extracts compilation settings
+- **Path-Sensitive Analysis** - Understands `#ifdef` blocks based on actual CMake defines
+- **Header File Support** - Properly resolves and analyzes `.h` and `.hpp` files
+- **Class & OOP Analysis** - Tracks class methods, attributes, and inheritance
+- **Interprocedural Analysis** - Follows dataflow across function boundaries
+- **Multi-file Analysis** - Analyzes entire C++ projects with correct context
+
+### 📋 C++ Requirements
+
+#### System Requirements
+- **Clang/LLVM** must be installed:
+  - **Windows**: `choco install llvm` or download from [LLVM releases](https://github.com/llvm/llvm-project/releases)
+  - **Linux**: `sudo apt-get install clang libclang-dev` (Ubuntu/Debian)
+  - **macOS**: `brew install llvm` or comes with Xcode
+
+#### Python Dependencies
+```bash
+pip install clang>=16.0.0
+```
+
+#### Environment Setup
+Set `LIBCLANG_PATH` if needed:
+- **Windows**: `set LIBCLANG_PATH=C:\Program Files\LLVM\bin\libclang.dll`
+- **Linux**: `export LIBCLANG_PATH=/usr/lib/x86_64-linux-gnu/libclang.so.1`
+- **macOS**: `export LIBCLANG_PATH=/usr/local/opt/llvm/lib/libclang.dylib`
+
+### 🏗️ CMake Integration
+
+DFGviz can parse `CMakeLists.txt` to extract exact compilation settings:
+
+#### What CMake Integration Provides
+
+1. **Include Path Resolution**
+   - Extracts `include_directories()` → `-I` flags for Clang
+   - Resolves `${CMAKE_SOURCE_DIR}` and other CMake variables
+   - Ensures headers are found correctly
+
+2. **Preprocessor Definitions**
+   - Extracts `add_definitions(-DDEBUG_MODE)` → `-DDEBUG_MODE` flag
+   - Enables accurate path-sensitive analysis of `#ifdef` blocks
+   - Understands conditional compilation based on actual CMake defines
+
+3. **C++ Standard Version**
+   - Reads `set(CMAKE_CXX_STANDARD 17)` → `-std=c++17` flag
+   - Ensures Clang uses the correct C++ standard
+
+4. **Source/Header Discovery**
+   - Parses `set(SOURCES ...)` and `set(HEADERS ...)` lists
+   - Enables multi-file project analysis
+
+#### Example: CMakeLists.txt
+
+```cmake
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+# Compile definitions
+add_definitions(-DDEBUG_MODE)
+add_definitions(-DVERSION_MAJOR=1)
+
+# Source files
+set(SOURCES
+    src/main.cpp
+    src/calculator.cpp
+)
+
+add_executable(my_app ${SOURCES})
+```
+
+#### Using CMake Integration
+
+**In GUI:**
+1. Select **C++** as the language
+2. Select a repository with `CMakeLists.txt`
+3. Add C++ files to analyze (or use Auto-detect)
+4. DFGviz will automatically parse CMakeLists.txt and use correct settings
+
+**Programmatically:**
+```python
+from cmake_parser import CMakeParser
+from clang_complete_dataflow import ClangDataflowAnalyzer
+
+# Parse CMakeLists.txt
+parser = CMakeParser(Path("CMakeLists.txt"))
+
+# Get compile arguments for a source file
+source_file = Path("src/main.cpp")
+compile_args = parser.get_compile_args(source_file)
+
+# Analyze with CMake context
+analyzer = ClangDataflowAnalyzer(str(source_file), compile_args=compile_args)
+analyzer.analyze_with_clang()
+```
+
+### 🧪 Testing C++ Analysis
+
+Run the comprehensive C++ test suite:
+
+```bash
+# Run all C++ tests
+python test_cpp_runner.py --all
+
+# Run CMake-specific tests
+python test_cmake_analysis.py
+```
+
+### 📚 C++ Documentation
+
+- [C++ Analysis Guide](CPP_ANALYSIS_README.md) - Detailed C++ analysis documentation
+- [CMake Integration Guide](CMAKE_INTEGRATION_GUIDE.md) - CMake parsing and usage
+- [CMake Analysis README](CMake_ANALYSIS_README.md) - CMake parser documentation
+- [Test Documentation](TEST_README.md) - Testing guide for C++ analysis
+
+### 🎯 Path-Sensitive Analysis Example
+
+With CMake integration, DFGviz understands conditional compilation:
+
+```cpp
+int main() {
+    int x = 10;
+    
+    #ifdef DEBUG_MODE  // From CMake: add_definitions(-DDEBUG_MODE)
+        int debug_value = x * 2;  // Only analyzed if DEBUG_MODE defined
+        x = debug_value;
+    #endif
+    
+    return x;
+}
+```
+
+**Without CMake**: Might miss `debug_value` if `DEBUG_MODE` isn't defined.
+
+**With CMake**: 
+- Parses `add_definitions(-DDEBUG_MODE)` from CMakeLists.txt
+- Analyzes with `DEBUG_MODE` defined
+- Detects `debug_value` and tracks dataflow: `x → debug_value → x`
+
+---
+
 ## 🎨 Features in Detail
 
 ### Interactive Dataflow Graph
@@ -283,10 +440,20 @@ DFGviz uses Scalpel efficiently, focusing on its core CFG building capabilities.
 The pre-built binary includes everything - just download and run!
 
 ### Python Dependencies
+
+**For Python Analysis:**
 ```
 python-scalpel>=0.1.0
 pyinstaller>=5.0.0
 ```
+
+**For C++ Analysis (Optional):**
+```
+clang>=16.0.0
+```
+
+**Full Requirements:**
+See [requirements.txt](requirements.txt) for complete list.
 
 ---
 
