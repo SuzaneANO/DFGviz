@@ -36,11 +36,14 @@
 
 # Exclude source code
 *.py
+!git_history_dataflow_analyzer.py
+!cmake_parser.py
 *.pyc
 *.pyo
 *.pyd
 __pycache__/
 *.spec
+!pyinstaller.spec
 build/
 !test_cpp_files/
 !test_cpp_files/*.cpp
