@@ -74,12 +74,28 @@ jobs:
         name: release-${{ matrix.os }}
         path: releases/*
     
-    - name: Create GitHub Release
+    - name: Create GitHub Release (executable packages only)
       if: matrix.os == 'ubuntu-latest'
       uses: softprops/action-gh-release@v1
       with:
         files: releases/*
-        generate_release_notes: true
+        generate_release_notes: false
+        draft: false
+        prerelease: false
+        body: |
+          ## Release ${{ github.ref_name }}
+          
+          **⚠️ IMPORTANT: Download the executable package below, NOT the source code archives.**
+          
+          ### Executable Packages (Download These)
+          The release packages contain **ONLY the executable file** - no source code, no dependencies.
+          
+          ### Installation
+          1. Download the package for your platform (`.zip` for Windows, `.tar.gz` for Linux/Mac)
+          2. Extract the archive
+          3. Run the executable directly - no installation needed
+          
+          **Note:** Ignore the automatic "Source code" archives - those are for developers only.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
