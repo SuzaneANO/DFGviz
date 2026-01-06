@@ -1,18 +1,10 @@
 # Ignore everything by default
 *
 
-# But include these files/directories
+# But include these essential files
 !.gitignore
 !README.md
-!LICENSE
-!QUICK_START.md
-!CONTRIBUTING.md
-!PUBLISHING_GUIDE.md
-!RELEASE_NOTES.md
 !requirements.txt
-!WORKFLOW.md
-!LOGO_GENERATION_PROMPT.md
-!SCALPEL_COVERAGE_REPORT.md
 
 # Include executable and releases
 !dist/
@@ -21,56 +13,7 @@
 !releases/*.zip
 !releases/*.tar.gz
 
-# Include documentation assets
-!docs/
-!docs/logo.png
-!docs/demo_video.mp4
-!docs/demo_video_thumbnail.png
-!docs/screenshots/
-!docs/screenshots/*.png
-
 # Include GitHub workflows
 !.github/
 !.github/workflows/
 !.github/workflows/*.yml
-
-# Exclude source code
-*.py
-!git_history_dataflow_analyzer.py
-!cmake_parser.py
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-*.spec
-!pyinstaller.spec
-build/
-!test_cpp_files/
-!test_cpp_files/*.cpp
-*.json
-*.html
-*.dot
-!pytest.ini
-*.md
-!README.md
-!CONTRIBUTING.md
-!PUBLISHING_GUIDE.md
-# Documentation files are now in doc/ directory
-!doc/
-!doc/*.md
-graph_backups/
-# Ignore all test files
-test_*.py
-*_test.py
-test_cpp_files/test_*.cpp
-# But keep test_cpp_files structure for CMake (source files, headers, CMakeLists.txt)
-!test_cpp_files/CMakeLists.txt
-!test_cpp_files/include/
-!test_cpp_files/src/
-!test_cpp_files/src/*.cpp
-!test_cpp_files/include/*.h
-!cmake_parser.py
-*.bat
-*.sh
-!prepare_release.sh
-!prepare_release.ps1
