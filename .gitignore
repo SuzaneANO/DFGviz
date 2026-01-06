@@ -20,6 +20,7 @@
 doc/
 docs/*
 !docs/logo.png
+!docs/demo_video.mp4
 test_cpp_files/
 *.md
 !README.md
