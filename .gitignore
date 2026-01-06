@@ -1,19 +1,9 @@
 # Ignore everything by default
 *
 
-# But include these essential files
-!.gitignore
-!README.md
-!requirements.txt
-
-# Include executable and releases
+# But include the executable
 !dist/
 !dist/DFGviz.exe
-!releases/
-!releases/*.zip
-!releases/*.tar.gz
 
-# Include GitHub workflows
-!.github/
-!.github/workflows/
-!.github/workflows/*.yml
+# Include .gitignore itself
+!.gitignore
