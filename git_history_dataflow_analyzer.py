@@ -820,8 +820,8 @@ def launch_tkinter_gui(repo_path: str, target_files: Optional[List[str]] = None)
                             files.extend([os.path.join(str(self.repo_path), f) for f in result_cpp.stdout.strip().split('\n') if f])
                         if result_h.stdout:
                             files.extend([os.path.join(str(self.repo_path), f) for f in result_h.stdout.strip().split('\n') if f])
-                    
-                    file_type = "C++"
+                        
+                        file_type = "C++"
                     if cmake_used:
                         file_type = "C++ (from CMake)"
                 
