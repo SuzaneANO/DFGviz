@@ -18,7 +18,8 @@
 
 # Exclude everything else (docs, tests, etc.) from releases
 doc/
-docs/
+docs/*
+!docs/logo.png
 test_cpp_files/
 *.md
 !README.md
