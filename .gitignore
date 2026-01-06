@@ -5,5 +5,8 @@
 !dist/
 !dist/DFGviz.exe
 
+# Include release script
+!create_release.py
+
 # Include .gitignore itself
 !.gitignore
