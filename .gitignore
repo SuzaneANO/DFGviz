@@ -1,0 +1,34 @@
+# Ignore everything by default
+*
+
+# But include the executable
+!dist/
+!dist/DFGviz.exe
+
+# Include essential source files for building
+!create_release.py
+!.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+!requirements.txt
+!pyinstaller.spec
+!README.md
+!LICENSE
+
+# Exclude everything else (docs, tests, etc.) from releases
+doc/
+docs/*
+!docs/logo.png
+!docs/demo_video.mp4
+test_cpp_files/
+*.md
+!README.md
+releases/
+*.ps1
+*.sh
+pytest.ini
+git_history_dataflow_analyzer.py
+cmake_parser.py
+prepare_release.*
+LOGO_GENERATION_PROMPT.md
